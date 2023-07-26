@@ -1,0 +1,44 @@
+
+  body {
+    background-image: url('https://img.okezone.com/content/2019/02/14/320/2017803/petani-bawang-merah-brebes-panen-hasilnya-untung-6txh41UsH5.jpeg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+
+  /* Style inputs with type="text", select elements, and textareas */
+  input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stay in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+    background-color: transparent; /* Make the background transparent */
+    color: #333; /* Change the text color to make it clearer */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow to the text elements */
+  }
+
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  /* Add a background color and some padding around the form */
+  .container {
+    border-radius: 5px;
+    background-color: rgba(242, 242, 242, 0.5); /* Use RGBA to set the container background with transparency */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow to the container */
+  }
