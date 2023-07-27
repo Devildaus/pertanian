@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use \App\Models\User;
+use \App\Models\Category;
+use \App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,5 +18,48 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        User::create([
+            'name' => 'Mukhamad Firdaus',
+            'email' => 'dauspunya@gmail.com',
+            'password' => bcrypt('12345')
+        ]);
+        Category::create([
+            'name' => 'Desa 1',
+            'slug' => 'Desa 1'
+        ]);
+        Category::create([
+            'name' => 'Desa 2',
+            'slug' => 'Desa 2'
+        ]);
+
+        Category::create([
+            'name' => 'Desa 3',
+            'slug' => 'Desa 3'
+        ]);
+
+        Post::create([
+            'title'=>'Postingan Pertama',
+            'slug'=>'postingan-pertama',
+            'excerpt'=> 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, nemo?' ,
+            'body'=>' <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, mollitia! Quos et ratione deserunt repudiandae similique placeat nostrum praesentium, sint repellat? Minus esse illum, animi dolor iusto quisquam quae eius, inventore provident optio minima nesciunt consectetur blanditiis quis nihil id doloribus tempore error fugiat maxime? Veritatis earum, voluptatum blanditiis tenetur magni dolorum eaque nostrum doloribus quae! Voluptatem ullam libero amet a impedit totam ratione nesciunt, quam repellendus. Nostrum eos ut atque cumque deleniti doloremque aliquam ratione, nulla voluptates velit consequuntur, pariatur accusamus iste dolorum quia harum excepturi impedit nisi quos maxime eveniet. Mollitia eum, optio dolores molestias voluptatibus perferendis doloremque!</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis optio consectetur at ex unde! Illum ipsa molestiae corrupti deserunt dolore corporis quibusdam odit enim porro, at quas dolores, nulla sit reprehenderit eligendi aliquid, rem cupiditate distinctio quod molestias quaerat. Nihil voluptatum, nobis nostrum aliquam minima eveniet! Iusto praesentium minus laudantium minima ducimus, officiis adipisci? At, beatae fugiat. Fugiat rerum culpa facilis saepe corrupti, sunt reiciendis nobis repellat totam repudiandae accusantium excepturi debitis praesentium aut fuga adipisci itaque dolorum officia vel asperiores recusandae corporis at repellendus est? Dicta, totam ullam sit repellat dolorem ab maxime provident odit, repudiandae, aliquid necessitatibus labore.</p> ',
+            'category_id'=>'2',
+            'user_id'=>'1']);
+
+        Post::create([
+            'title'=>'Postingan Kedua',
+            'category_id'=>'1',
+            'user_id'=>'1',
+            'slug'=>'postingan-ke-dua',
+            'excerpt'=> 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, nemo?' ,
+            'body'=>' <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, mollitia! Quos et ratione deserunt repudiandae similique placeat nostrum praesentium, sint repellat? Minus esse illum, animi dolor iusto quisquam quae eius, inventore provident optio minima nesciunt consectetur blanditiis quis nihil id doloribus tempore error fugiat maxime? Veritatis earum, voluptatum blanditiis tenetur magni dolorum eaque nostrum doloribus quae! Voluptatem ullam libero amet a impedit totam ratione nesciunt, quam repellendus. Nostrum eos ut atque cumque deleniti doloremque aliquam ratione, nulla voluptates velit consequuntur, pariatur accusamus iste dolorum quia harum excepturi impedit nisi quos maxime eveniet. Mollitia eum, optio dolores molestias voluptatibus perferendis doloremque!</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis optio consectetur at ex unde! Illum ipsa molestiae corrupti deserunt dolore corporis quibusdam odit enim porro, at quas dolores, nulla sit reprehenderit eligendi aliquid, rem cupiditate distinctio quod molestias quaerat. Nihil voluptatum, nobis nostrum aliquam minima eveniet! Iusto praesentium minus laudantium minima ducimus, officiis adipisci? At, beatae fugiat. Fugiat rerum culpa facilis saepe corrupti, sunt reiciendis nobis repellat totam repudiandae accusantium excepturi debitis praesentium aut fuga adipisci itaque dolorum officia vel asperiores recusandae corporis at repellendus est? Dicta, totam ullam sit repellat dolorem ab maxime provident odit, repudiandae, aliquid necessitatibus labore.</p> '
+            ]);
+
+        Post::create([
+            'title'=>'Postingan Ketiga',
+            'slug'=>'postingan-ke-tiga',
+            'excerpt'=> 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, nemo?' ,
+            'body'=>' <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, mollitia! Quos et ratione deserunt repudiandae similique placeat nostrum praesentium, sint repellat? Minus esse illum, animi dolor iusto quisquam quae eius, inventore provident optio minima nesciunt consectetur blanditiis quis nihil id doloribus tempore error fugiat maxime? Veritatis earum, voluptatum blanditiis tenetur magni dolorum eaque nostrum doloribus quae! Voluptatem ullam libero amet a impedit totam ratione nesciunt, quam repellendus. Nostrum eos ut atque cumque deleniti doloremque aliquam ratione, nulla voluptates velit consequuntur, pariatur accusamus iste dolorum quia harum excepturi impedit nisi quos maxime eveniet. Mollitia eum, optio dolores molestias voluptatibus perferendis doloremque!</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis optio consectetur at ex unde! Illum ipsa molestiae corrupti deserunt dolore corporis quibusdam odit enim porro, at quas dolores, nulla sit reprehenderit eligendi aliquid, rem cupiditate distinctio quod molestias quaerat. Nihil voluptatum, nobis nostrum aliquam minima eveniet! Iusto praesentium minus laudantium minima ducimus, officiis adipisci? At, beatae fugiat. Fugiat rerum culpa facilis saepe corrupti, sunt reiciendis nobis repellat totam repudiandae accusantium excepturi debitis praesentium aut fuga adipisci itaque dolorum officia vel asperiores recusandae corporis at repellendus est? Dicta, totam ullam sit repellat dolorem ab maxime provident odit, repudiandae, aliquid necessitatibus labore.</p> ',
+            'category_id'=>'3',
+            'user_id'=>'1']);
     }
 }

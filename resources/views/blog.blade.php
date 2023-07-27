@@ -1,39 +1,5 @@
 @extends('front.main')
 @section('container')
-<style>
-    .button {
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: rgb(74, 193, 98);
-    background-color: #ffffff;
-    border: none;
-    border-radius: 15px;
-}
-
-.button:hover {
-    background-color: rgb(74, 193, 98);
-    color: rgb(255, 255, 255);
-}
-
-.button:active {
-    background-color: rgb(74, 193, 98);
-    color: rgb(255, 255, 255);
-    transform: translateY(4px);}
-
-.containerblog {
-    width: 500px;
-    height: 500px;
-    }
-
-.containerblog img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    }
-</style>
 <h1 align=center>{{ $title }}</h1></br>
 @if ($posts->count())
 <div class="card mb-3">
@@ -50,7 +16,7 @@
         <h3 class="card-title"><a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">{{ $posts[0]->title }}</a></h3>
         <p>
             <small class="text-muted">
-                By.<a href="/posts?author={{ $posts[0]->author }}">{{ $posts[0]->author }}</a> in <a href="/posts?category={{ $posts[0]->category->slug ?? 'unknown' }}" class="text-decoration-none"> {{ $posts[0]->category->name  ?? 'unknown' }}</a> {{ $posts[0]->created_at->diffForHumans() }}
+                By.<a href="#">{{ $posts[0]->user->name }}</a> in <a href="/posts?category={{ $posts[0]->category->slug ?? 'unknown' }}" class="text-decoration-none"> {{ $posts[0]->category->name  ?? 'unknown' }}</a> {{ $posts[0]->created_at->diffForHumans() }}
             </small>
         </p>
 
@@ -61,7 +27,7 @@
     </div>
 </div>
 
-<div class="containerblog" style="width: 500px; height: 500px;">
+<div class="container" style="width: 500px; height: 500px;">
     <div class="row">
         @foreach ($posts->skip(1) as $post)
         <div class="col-md-4">
@@ -79,7 +45,7 @@
                     <h5 class="card-title"><a href="/posts/{{ $post->slug }}" class="text-decoration-none text-dark">{{ $post->title }}</a></h5>
                     <p>
                         <small class="text-muted">
-                            By. <a href="/post?author={{ $post->author }}">{{ $post->author }}</a> {{ $post->created_at->diffForHumans() }}
+                            By. <a href="#">{{ $post->user->name }}</a> {{ $post->created_at->diffForHumans() }}
                         </small>
                     </p>
                     <p class="card-text">{{ $post->excerpt }}</p>
