@@ -5,7 +5,7 @@
     <div class="row justify-content-center mb-5">
         <div class="col-md-8">
             <h2 class="mb-3" style="text-align:center;">{{ $post->title }}</h2>
-            <p>By. <a href="#"> </a> in <a href="/categories/{{ $post->category->slug}}"> {{ $post->category->name }}</a></p>
+            <p>By. <a href="authors/{{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a> in <a href="/categories/{{ $post->category->slug}}"> {{ $post->category->name }}</a></p>
             @if ($post->image)
             <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid mt-3" alt="/posts?category={{ $post->category->slug }}">
             @else
